@@ -5,7 +5,7 @@ function copyEmailToClipboard() {
 }
 
 function downloadResume() {
-  window.open('./Profile.pdf');
+  window.open('./resume.pdf');
 
   showToast('Opening resume...');
 }
@@ -18,7 +18,7 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.classList.remove("show");
-  }, 2000);
+  }, 3000);
 
   toast.offsetHeight;
 }
