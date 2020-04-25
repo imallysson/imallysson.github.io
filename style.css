@@ -8,33 +8,47 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #FFF;
   box-sizing: border-box;
   font-family: 'Montserrat', OpenSans, sans-serif;
 }
 
-.content {
+body.light {
+  background-color: #FFF;
+  color: #000;
+}
+
+div.content {
   height: 100%;
   display: flex;
+  flex: 1;
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
 
-h1.name {
+h1#name {
   font-size: 4.5em;
   margin-bottom: .1em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-p {
+h1#name.light {
+  color: #000;
+}
+
+p#title {
   font-size: 1.5em;
   font-weight: 200;
-  color: #aaa;
+  color: #AAA;
 }
 
-.menu {
+p#title.light {
+  color: #666;
+}
+
+ul.menu {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -42,25 +56,59 @@ p {
   margin-top: 2.5em;
 }
 
-.menu li {
+ul.menu li {
   margin: 1em;
   padding: 0.2em;
 }
 
-.menu .item-name {
+ul.menu .item-name {
   padding: 1px 10px;
   transition: 0.3s;
 }
 
-.menu .item-name:hover {
+ul.menu .item-name:hover {
+  color: #FFF;
   background-color: #147CE5;
   transform: rotate(-5deg);
 }
 
-.menu li a {
+ul.menu li a.link {
   font-size: 1em;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
   align-self: center;
+}
+
+ul.menu li a.link.light {
+  color: #000;
+}
+
+div.theme {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+button.change-theme {
+  background: transparent;
+  font-size: 1.5em;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+}
+
+button.change-theme:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  ul.menu li {
+    margin: .5em;
+  }
+
+  ul.menu {
+    display: grid;
+    margin-top: 2.5em;
+  }
 }
