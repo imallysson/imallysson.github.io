@@ -1,0 +1,53 @@
+header {
+  padding-top: 20px;
+}
+
+ul.menu {
+  display: inline-flex;
+  list-style-type: none;
+}
+
+ul.menu li {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  font-weight: var(--medium);
+  font-size: var(--font-16);
+}
+
+ul.menu a {
+  text-decoration: none;
+}
+
+ul.menu li:not(:last-child) {
+  margin-right: 20px;
+}
+
+ul.menu li a.selected span {
+  color: var(--light-gray);
+}
+
+ul.menu li span {
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+  height: 32px;
+  padding: 0px 14px;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+
+ul.menu li span:hover {
+  color: var(--light-gray);
+}
+
+ul.menu .highlight {
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 52.08%, rgba(255, 255, 255, 0.03) 100%);
+  transition: all 0.2s;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 6px;
+}
