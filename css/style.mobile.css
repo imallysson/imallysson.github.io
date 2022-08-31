@@ -1,0 +1,76 @@
+
+@media only screen and (max-width: 660px) {
+  h1 {
+    font-size: var(--font-h1-m);
+  }
+
+  h2 {
+    font-size: var(--font-h2-m);
+  }
+
+  h3 {
+    font-size: var(--font-h3-m);
+  }
+
+  p,
+  section#career ul li div.right button i,
+  ul.menu li,
+  blockquote {
+    font-size: var(--font-16-m);
+  }
+
+  section#career ul span.position {
+    font-size: var(--font-18-m);
+  }
+
+  div.name-position-photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px 0px 60px 0px;
+    flex-direction: column-reverse;
+  }
+
+  div.photo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 50px;
+  }
+
+  div.photo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 50px;
+  }
+
+  div.social-media {
+    margin-bottom: 60px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  section#career ul li {
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+
+  section#career ul li div.left {
+    margin-bottom: 16px;
+    font-size: var(--font-16-m);
+  }
+
+  section#career ul li div.right {
+    font-size: var(--font-16-m);
+  }
+
+  section#uses ul li {
+    font-size: var(--font-16-m);
+  }
+
+  footer {
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 100%, rgb(var(--gradient-b-to, 85 85 85)/0.2) 0, rgb(var(--gradient-from, 85 85 85)/0.8) 70%) right;
+  }
+}

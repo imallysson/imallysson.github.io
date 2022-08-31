@@ -1,0 +1,157 @@
+:root {
+  --background-color: #111111;
+  --white: #FFFFFF;
+  --light-gray: #EAEAEA;
+  --dark-gray: #888888;
+  --icon-color: #595959;
+  --link-hover: #b8b8b8;
+  --selection: #212121;
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --gradient-from: 17 17 17;
+  --gradient-g-to: 76 255 226;
+  --gradient-p-to: 145 46 185;
+  --gradient-b-to: 0 132 207;
+  --font-16: 16px;
+  --font-16-m: 14px;
+  --font-18: 18px;
+  --font-18-m: 16px;
+  --font-h1: 48px;
+  --font-h1-m: 34px;
+  --font-h2: 32px;
+  --font-h2-m: 24px;
+  --font-h3: 18px;
+  --font-h3-m: 16px;
+  --font-i: 24px;
+}
+
+::-moz-selection {
+  color: var(--light-gray);
+  background: var(--selection);
+}
+
+::selection {
+  color: var(--light-gray);
+  background: var(--selection);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--dark-gray);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+div.content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 0px 20px;
+}
+
+p {
+  font-size: var(--font-16);
+  font-weight: var(--regular);
+  color: var(--dark-gray);
+}
+
+div.background-light {
+  background:
+    radial-gradient(circle at 68% 12%, rgb(var(--gradient-g-to, 85 85 85)/.08) 0, rgb(var(--gradient-from, 85 85 85)/.08) 25%) right,
+    radial-gradient(circle at 32% 32%, rgb(var(--gradient-p-to, 85 85 85)/.17) 0, rgb(var(--gradient-from, 85 85 85)/.17) 30%) left;
+  position: absolute;
+  width: 100%;
+  height: 1924px;
+  left: 0;
+  top: 0;
+  z-index: -100;
+}
+
+a {
+  color: var(--white);
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+@media only screen and (max-width: 660px) {
+  h1 {
+    font-size: var(--font-h1-m);
+  }
+
+  h2 {
+    font-size: var(--font-h2-m);
+  }
+
+  h3 {
+    font-size: var(--font-h3-m);
+  }
+
+  p,
+  section#career ul li div.right button i,
+  ul.menu li,
+  blockquote {
+    font-size: var(--font-16-m);
+  }
+
+  section#career ul span.position {
+    font-size: var(--font-18-m);
+  }
+
+  div.name-position-photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px 0px 60px 0px;
+    flex-direction: column-reverse;
+  }
+
+  div.photo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 50px;
+  }
+
+  div.social-media {
+    margin-bottom: 60px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  section#career ul li {
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+
+  section#career ul li div.left {
+    margin-bottom: 16px;
+    font-size: var(--font-16-m);
+  }
+
+  section#career ul li div.right {
+    font-size: var(--font-16-m);
+  }
+
+  section#uses ul li {
+    font-size: var(--font-16-m);
+  }
+
+  footer {
+    text-align: center;
+  }
+}

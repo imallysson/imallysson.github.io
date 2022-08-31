@@ -1,35 +1,58 @@
-const btnChangeTheme = document.getElementById("change-theme");
-let isLight = getThemeFromStorage();
+const triggers = document.querySelectorAll('ul.menu li a');
+const highlight = document.createElement('span');
 
-if (isLight) {
-  toggleTheme();
+let selected = document.querySelector('ul.menu li a.selected');
+highlightSelected();
+
+document.querySelector('ul.menu').appendChild(highlight);
+
+function setHighlightCoords(linkCoords) {
+  highlight.classList.add('highlight');
+
+  const coords = {
+    width: linkCoords.width,
+    height: linkCoords.height,
+    top: linkCoords.top + window.scrollY,
+    left: linkCoords.left + window.scrollX
+  };
+
+  highlight.style.width = `${coords.width}px`;
+  highlight.style.height = `${coords.height}px`;
+  highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
 }
 
-function getThemeFromStorage() {
-  const isLightTheme = parseInt(localStorage.getItem('isLightTheme'));
-  
-  return isLightTheme === 1 ? true : false;
+function highlightSelected() {
+  const linkCoords = selected.getBoundingClientRect();
+  selected.classList.add('selected');
+
+  setHighlightCoords(linkCoords);
 }
 
+function mouseEnterMenu() {
+  selected.classList.remove('selected');
 
-function changeTheme() {
-  isLight = !isLight;
-  localStorage.setItem('isLightTheme', String(isLight ? 1 : 0));
-  
-  toggleTheme();
+  const linkCoords = this.getBoundingClientRect();
+
+  setHighlightCoords(linkCoords);
 }
 
-function toggleTheme() {
-  btnChangeTheme.innerHTML = isLight ? '🌑' : '☀️';
-
-  document.body.classList.toggle('light');
-  document.getElementById("name").classList.toggle('light');
-  document.getElementById('title').classList.toggle('light');
-  const links = document.getElementsByClassName('link');
-
-  for (let i = 0; i < links.length; i++) {
-    links[i].classList.toggle('light');  
+function mouseLeaveMenu() {
+  if (selected) {
+    highlightSelected();
+  } else {
+    highlight.classList.remove('highlight');
   }
 }
 
-btnChangeTheme.addEventListener('click', changeTheme);
+function mouseClickMenu() {
+  selected.classList.remove('selected');
+
+  selected = this;
+  selected.classList.add('selected');
+
+  highlightSelected();
+}
+
+triggers.forEach(a => a.addEventListener('mouseenter', mouseEnterMenu));
+triggers.forEach(a => a.addEventListener('mouseleave', mouseLeaveMenu));
+triggers.forEach(a => a.addEventListener('click', mouseClickMenu));

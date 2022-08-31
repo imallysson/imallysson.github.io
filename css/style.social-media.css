@@ -1,0 +1,238 @@
+div.social-media {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+div.social-media a {
+  text-decoration: none;
+  line-height: 36px;
+}
+
+div.social-media a div.item {
+  display: flex;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 10px 10px 10px 0px;
+  transition: 0.3s;
+  color: var(--icon-color);
+}
+
+div.social-media a div.item:hover {
+  color: white;
+  margin: 5px 10px 10px 0px;
+}
+
+div.social-media a div.item div.item-background {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 52.08%, rgba(255, 255, 255, 0.03) 100%);
+  border-radius: 6px;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+div.social-media a div.item div.item-background:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+div.social-media a div.item:hover div.item-background::before {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+div.item-background div.ellipse-l {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  right: 2px;
+  bottom: 4px;
+}
+
+div.item-background div.ellipse-m {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  right: 8px;
+  bottom: 12px;
+}
+
+div.item-background div.ellipse-s {
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  left: 2px;
+  top: 2px;
+}
+
+/* Linkedin */
+div.social-media a div.item:hover i.linkedin {
+  background: -moz-linear-gradient(180deg, #E9F9FF 0%, #D3F4FF 100%);
+  background: -webkit-linear-gradient(180deg, #E9F9FF 0%, #D3F4FF 100%);
+  background: linear-gradient(180deg, #E9F9FF 0%, #D3F4FF 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 3px #0E2C3D);
+}
+
+div.social-media a.linkedin div.item:hover div.item-background {
+  box-shadow: inset 1px -1px 0px rgba(120, 187, 255, 0.1),
+    inset 0px -1px 0px rgba(255, 255, 255, 0.08),
+    0px 4px 8px rgba(108, 204, 255, 0.15);
+}
+
+div.social-media a.linkedin div.item:hover div.ellipse-l {
+  display: block;
+  background-color: #00AFFF;
+}
+
+div.social-media a.linkedin div.item:hover div.ellipse-s {
+  display: block;
+  background-color: #00AFFF;
+}
+
+/* Github */
+div.social-media a div.item:hover i.github {
+  background: -moz-linear-gradient(180deg, #F5F0FF 0%, #E9DDFF 100%);
+  background: -webkit-linear-gradient(180deg, #F5F0FF 0%, #E9DDFF 100%);
+  background: linear-gradient(180deg, #F5F0FF 0%, #E9DDFF 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 3px #310B53);
+}
+
+div.social-media a.github div.item:hover div.item-background {
+  box-shadow: inset 1px -1px 2px 2px rgba(206, 173, 255, 0.2),
+    inset 0px -1px 0px rgba(255, 255, 255, 0.08),
+    0px 4px 10px rgba(185, 137, 255, 0.32);
+}
+
+div.social-media a.github div.item:hover div.ellipse-l {
+  display: block;
+  background-color: #804EDA;
+}
+
+div.social-media a.github div.item:hover div.ellipse-s {
+  display: block;
+  background-color: #7d6eff;
+}
+
+/* Email */
+div.social-media a div.item:hover i.email {
+  background: -moz-linear-gradient(180deg, #FF1B00 0%, #FFEFED 0.01%, #FFDDD9 100%);
+  background: -webkit-linear-gradient(180deg, #FF1B00 0%, #FFEFED 0.01%, #FFDDD9 100%);
+  background: linear-gradient(180deg, #FF1B00 0%, #FFEFED 0.01%, #FFDDD9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 3px #3F120C);
+}
+
+div.social-media a.email div.item:hover div.item-background {
+  box-shadow: inset -1px 1px 0px rgba(255, 140, 131, 0.3),
+    inset 1px -2px 0px rgba(255, 140, 131, 0.5),
+    inset 0px -1px 0px rgba(255, 255, 255, 0.08),
+    0px 4px 8px rgba(255, 140, 131, 0.29);
+}
+
+div.social-media a.email div.item:hover div.ellipse-l {
+  display: block;
+  background-color: #FF1B00;
+}
+
+div.social-media a.email div.item:hover div.ellipse-s {
+  display: block;
+  background-color: #FF1B00;
+}
+
+/* Instagram */
+div.social-media a div.item:hover i.instagram {
+  background: -moz-linear-gradient(180deg, #FFF0F7 0%, #FFC9E1 100%);
+  background: -webkit-linear-gradient(180deg, #FFF0F7 0%, #FFC9E1 100%);
+  background: linear-gradient(180deg, #FFF0F7 0%, #FFC9E1 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 3px #310B53);
+}
+
+div.social-media a.instagram div.item:hover div.item-background {
+  box-shadow: inset 0px 1px 0px rgba(255, 213, 96, 0.6),
+    inset -1px -2px 2px rgba(255, 0, 113, 0.2),
+    inset 0px -1px 0px rgba(255, 255, 255, 0.08),
+    0px 4px 8px rgba(255, 141, 231, 0.3);
+}
+
+div.social-media a.instagram div.item:hover div.ellipse-l {
+  display: block;
+  background-color: #b500ff;
+  right: 0px;
+  bottom: 0px;
+}
+
+div.social-media a.instagram div.item:hover div.ellipse-m {
+  display: block;
+  background-color: #ff0071;
+  right: 8px;
+  bottom: 8px;
+}
+
+div.social-media a.instagram div.item:hover div.ellipse-s {
+  display: block;
+  background-color: #ffd560;
+}
+
+/* Twitter */
+div.social-media a div.item:hover i.twitter {
+  background: -moz-linear-gradient(180deg, #E7F3FF 0%, #BDDEFF 100%);
+  background: -webkit-linear-gradient(180deg, #E7F3FF 0%, #BDDEFF 100%);
+  background: linear-gradient(180deg, #E7F3FF 0%, #BDDEFF 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 3px #073C73);
+}
+
+div.social-media a.twitter div.item:hover div.item-background {
+  box-shadow: inset -1px 1px 0px rgba(120, 187, 255, 0.2),
+    inset 0px -2px 0px rgba(120, 187, 255, 0.3),
+    0px 5px 10px rgba(58, 118, 192, 0.356);
+}
+
+div.social-media a.twitter div.item:hover div.ellipse-l {
+  display: block;
+  background-color: #0077f2;
+}
+
+div.social-media a.twitter div.item:hover div.ellipse-s {
+  display: block;
+  background-color: #00A3FF;
+}
